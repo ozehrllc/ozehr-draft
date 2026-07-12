@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self' https://api.ozehr.com; form-action 'self' https://api.ozehr.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <link rel="canonical" href="https://ozehr.com/sampleoptin.html" />
+    <title>ozehr SMS Consent Workflow</title>
+    <meta
+      name="description"
+      content="Public evidence for ozehr patient SMS opt-in, opt-out, consent language, Terms, Privacy, and support."
+    />
+    <meta property="og:title" content="ozehr SMS Consent Workflow" />
+    <meta
+      property="og:description"
+      content="Digital-form patient SMS opt-in and opt-out evidence for ozehr."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ozehr.com/sampleoptin.html" />
+    <meta property="og:image" content="https://ozehr.com/assets/social/ozehr-og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://ozehr.com/assets/social/ozehr-og.jpg" />
+    <link rel="icon" href="assets/svg/favicon.svg?v=20260426a" type="image/svg+xml" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6fbf9;
+        --card: #ffffff;
+        --ink: #071a45;
+        --muted: #5f6b7a;
+        --teal: #008c7a;
+        --teal-dark: #00796c;
+        --line: #d2dfda;
+        --soft: #edf8f4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: var(--teal-dark);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        width: min(1240px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.86);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: 74px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 9px;
+        background: var(--teal);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        font-size: 14px;
+      }
+
+      main {
+        padding: 64px 0;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
+        gap: 36px;
+        align-items: center;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 16px;
+        font-size: clamp(44px, 6vw, 76px);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+      }
+
+      h2 {
+        margin-bottom: 14px;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 20px;
+        line-height: 1.55;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 18px;
+        padding: 8px 12px;
+        border: 1px solid rgba(0, 140, 122, 0.2);
+        border-radius: 999px;
+        background: rgba(0, 140, 122, 0.08);
+        color: var(--teal-dark);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+        box-shadow: 0 16px 38px rgba(7, 26, 69, 0.07);
+      }
+
+      .hero-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+      }
+
+      section {
+        padding-top: 54px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--card);
+      }
+
+      .card p,
+      .copy p,
+      li {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .copy {
+        padding: 24px;
+        border: 1px solid rgba(0, 140, 122, 0.2);
+        border-radius: 16px;
+        background: var(--soft);
+      }
+
+      .copy p {
+        margin-bottom: 0;
+        color: var(--ink);
+        font-size: 16px;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .fact {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .fact strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+        color: var(--teal-dark);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .fact span {
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .screens {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .shot {
+        overflow: hidden;
+      }
+
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .shot div {
+        padding: 18px 22px 22px;
+      }
+
+      footer {
+        padding: 36px 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .grid,
+        .facts,
+        .screens {
+          grid-template-columns: 1fr;
+        }
+
+        .links {
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="ozehr home">
+          <span class="mark" aria-hidden="true"></span>
+          <span>ozehr</span>
+        </a>
+        <nav class="links" aria-label="Public evidence links">
+          <a href="https://app.ozehr.com">Patient app</a>
+          <a href="/terms.html">Terms</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="hero">
+          <div>
+            <span class="pill">Digital form SMS opt-in</span>
+            <h1>SMS consent workflow</h1>
+            <p class="lead">
+              Patients may opt in to ozehr SMS during account setup or from Communication preferences. SMS consent is
+              optional, the checkbox is unchecked by default, and patients can opt out any time by replying STOP or using
+              the app.
+            </p>
+            <div class="facts">
+              <div class="fact">
+                <strong>Program</strong>
+                <span>ozehr, operated by ozehr LLC</span>
+              </div>
+              <div class="fact">
+                <strong>Message frequency</strong>
+                <span>Varies, up to 5 messages per week</span>
+              </div>
+              <div class="fact">
+                <strong>Support</strong>
+                <span>Reply HELP, email contact@ozehr.com, or call 775-239-9991</span>
+              </div>
+              <div class="fact">
+                <strong>Opt out</strong>
+                <span>Reply STOP or update Communication preferences</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <img
+              class="hero-image"
+              src="assets/img/sms-opt-in-workflow-upload.jpg?v=20260505b"
+              alt="ozehr account setup screen showing an unchecked SMS opt-in checkbox with consent language, Terms, Privacy, STOP, HELP, and message frequency."
+            />
+          </div>
+        </div>
+
+        <section>
+          <h2>How patients opt in</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>1. Patient opens the form</h3>
+              <p>The SMS option is shown during account setup and in Communication preferences.</p>
+            </article>
+            <article class="card">
+              <h3>2. Checkbox starts unchecked</h3>
+              <p>The patient must actively select the checkbox. Account creation and care do not require SMS consent.</p>
+            </article>
+            <article class="card">
+              <h3>3. Consent terms are visible</h3>
+              <p>The form states message types, frequency, rates, STOP, HELP, Terms, Privacy, and support information.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Opt-in disclosure</h2>
+          <div class="copy">
+            <p>
+              By checking this box, I consent to receive recurring SMS text messages from ozehr, operated by ozehr LLC,
+              at the mobile number I provided. Messages may include appointment reminders and confirmations, lab result
+              availability notices, care alerts, and account notifications. Message frequency varies, up to 5 messages per
+              week. Message and data rates may apply. Reply STOP to opt out and HELP for help. Consent is not required to
+              receive care or create an account. Terms: https://ozehr.com/terms Privacy: https://ozehr.com/privacy
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Opt-out and privacy</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>STOP</h3>
+              <p>Patients can reply STOP to unsubscribe from future SMS messages.</p>
+            </article>
+            <article class="card">
+              <h3>HELP</h3>
+              <p>Patients can reply HELP for support information, or contact contact@ozehr.com.</p>
+            </article>
+            <article class="card">
+              <h3>No marketing SMS</h3>
+              <p>Messages are limited to transactional healthcare and account notifications. SMS opt-in data is not sold or shared for marketing.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="screenshots">
+          <h2>Workflow screenshots</h2>
+          <p class="lead">
+            Larger screenshots below show each state individually so the consent text and controls are readable.
+          </p>
+          <div class="screens">
+            <article class="panel shot">
+              <img
+                src="assets/img/sms-registration/ozehr-sms-opt-in-unchecked.png?v=20260505a"
+                alt="ozehr SMS opt-in checkbox unchecked by default."
+              />
+              <div>
+                <h3>Default unchecked state</h3>
+                <p>The patient can continue without SMS.</p>
+              </div>
+            </article>
+            <article class="panel shot">
+              <img
+                src="assets/img/sms-registration/ozehr-sms-opt-in-selected.png?v=20260505a"
+                alt="ozehr SMS opt-in checkbox selected before account creation."
+              />
+              <div>
+                <h3>Selected opt-in state</h3>
+                <p>The patient actively selects SMS before creating the account with SMS opt-in.</p>
+              </div>
+            </article>
+            <article class="panel shot">
+              <img
+                src="assets/img/sms-registration/ozehr-sms-preferences-enabled.png?v=20260505a"
+                alt="ozehr Communication preferences showing SMS enabled."
+              />
+              <div>
+                <h3>Communication preferences</h3>
+                <p>Patients can review consent status and turn SMS off in the app.</p>
+              </div>
+            </article>
+            <article class="panel shot">
+              <img
+                src="assets/img/sms-registration/ozehr-sms-opt-out-confirmation.png?v=20260505a"
+                alt="ozehr SMS opt-out confirmation."
+              />
+              <div>
+                <h3>Opt-out confirmation</h3>
+                <p>The app confirms the patient wants SMS turned off.</p>
+              </div>
+            </article>
+            <article class="panel shot">
+              <img
+                src="assets/img/sms-registration/ozehr-sms-opted-out.png?v=20260505a"
+                alt="ozehr SMS opted-out state with unchecked opt-back-in control."
+              />
+              <div>
+                <h3>SMS disabled</h3>
+                <p>SMS remains off unless the patient actively opts back in.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>ozehr is operated by ozehr LLC, a Nevada limited liability company.</p>
+        <p>Public business mailing address: 732 S 6th St, Ste N, Las Vegas, NV 89101.</p>
+      </div>
+    </footer>
+  </body>
+</html>

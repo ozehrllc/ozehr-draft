@@ -1,0 +1,29 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="oz-left" x1="13" y1="51" x2="32" y2="15" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00A49B" />
+      <stop offset="0.58" stop-color="#00918E" />
+      <stop offset="1" stop-color="#00777E" />
+    </linearGradient>
+    <linearGradient id="oz-right" x1="31" y1="16" x2="53" y2="51" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12A7A8" />
+      <stop offset="0.48" stop-color="#54C8C6" />
+      <stop offset="1" stop-color="#9EDAD0" />
+    </linearGradient>
+    <linearGradient id="oz-base" x1="13" y1="51" x2="53" y2="51" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#007477" />
+      <stop offset="0.42" stop-color="#008E88" />
+      <stop offset="1" stop-color="#043943" />
+    </linearGradient>
+    <filter id="oz-shadow" x="4" y="9" width="56" height="52" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#092D31" flood-opacity="0.16" />
+    </filter>
+  </defs>
+
+  <g filter="url(#oz-shadow)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12.7 50.7L31.7 15.6" stroke="url(#oz-left)" stroke-width="9.8" />
+    <path d="M31.8 15.6L52.1 50.7" stroke="url(#oz-right)" stroke-width="9.8" />
+    <path d="M52.1 50.7H12.7" stroke="url(#oz-base)" stroke-width="9.8" />
+  </g>
+
+</svg>

@@ -1,0 +1,17 @@
+{
+  "name": "ozehr",
+  "short_name": "ozehr",
+  "description": "The college health EHR you can talk to.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#043943",
+  "icons": [
+    {
+      "src": "/assets/brand/ozehr-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
